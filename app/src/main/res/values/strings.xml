@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Image Gallery</string>
+    <string name="no_internet_message">Ooops! \n No Internet connection found.\n Check your connection.</string>
+    <string name="share_image">Share Image</string>
+    <string name="my_albums">My Albums</string>
+    <string name="search_in_images">Search in images…</string>
+    <string name="description">Description :</string>
+    <string name="link">Link :</string>
+    <string name="photographer">Photographer :</string>
+    <string name="filter">Filter</string>
+    <string name="category">Category</string>
+    <string name="popular_photos">Popular photos</string>
+
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.imageGallery.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_photosFragment"
+            app:destination="@id/photosFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailedViewFragment"
+            app:destination="@id/detailedViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="com.example.imageGallery.ui.photosByCategory.PhotosFragment"
+        android:label="fragment_photos"
+        tools:layout="@layout/fragment_photos" >
+        <argument
+            android:name="headerTitle"
+            app:argType="string" />
+        <argument
+            android:name="selectedCategory"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_photosFragment_to_detailedViewFragment"
+            app:destination="@id/detailedViewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailedViewFragment"
+        android:name="com.example.imageGallery.ui.detailedView.DetailedViewFragment"
+        android:label="DetailedViewFragment"
+        tools:layout="@layout/fragment_detailed_view"
+        >
+        <argument
+            android:name="currentPhotoDetails"
+            app:argType="com.example.domain.model.api.reponse.PhotoDTO" />
+        <action
+            android:id="@+id/action_detailedViewFragment_to_filtersFragment2"
+            app:destination="@id/filtersFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/filtersFragment2"
+        android:name="com.example.imageGallery.ui.filters.FiltersFragment"
+        android:label="fragment_detailed_view"
+        tools:layout="@layout/fragment_filters" >
+        <argument
+            android:name="currentPhotoDetails"
+            app:argType="com.example.domain.model.api.reponse.PhotoDTO" />
+    </fragment>
+</navigation>

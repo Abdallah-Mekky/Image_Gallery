@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue"
+    tools:context=".ui.photosByCategory.PhotosFragment">
+
+    <TextView
+        android:id="@+id/headerTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold_font"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_22ssp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Nature" />
+
+    <LinearLayout
+        android:id="@+id/photosLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:orientation="vertical"
+        app:contentPadding="@dimen/_8sdp"
+        app:elevation="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerTitle">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/photosRV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/random_photo_item" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/noInternet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/no_internet_message"
+        android:textColor="@color/no_wifi_bg"
+        android:textSize="@dimen/_18ssp"
+        android:visibility="gone"
+        app:drawableTopCompat="@drawable/ic_no_wifi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
